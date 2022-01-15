@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClanRepository extends JpaRepository<Clan, Integer> {
+    Clan findByClanName(String name);
+    Clan findByClanTag(String tag);
 }

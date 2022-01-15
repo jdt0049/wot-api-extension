@@ -3,25 +3,23 @@ package com.wotapi.extension.model;
 import lombok.Data;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.List;
 
 @Data
 @Entity
-public class Clan {
+public class ClanWarsEvent {
 
     @Id
     @Column
-    int clanId;
+    String eventName;
     @Column
-    String clanName;
+    @ElementCollection
+    List<String> fronts;
     @Column
-    String clanTag;
+    String apiReferenceName;
     @Column
-    String clanImageUrl;
-    @Column
-    @OneToMany
-    List<Gamer> gamers;
+    Boolean isActive;
 }
