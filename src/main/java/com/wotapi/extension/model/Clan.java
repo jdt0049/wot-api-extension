@@ -1,15 +1,17 @@
 package com.wotapi.extension.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Table
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Clan {
 
     @Id
@@ -22,6 +24,6 @@ public class Clan {
     @Column
     String clanImageUrl;
     @Column
-    @OneToMany
+    @OneToMany(targetEntity=Gamer.class, mappedBy="clan")
     List<Gamer> gamers;
 }

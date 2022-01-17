@@ -2,14 +2,12 @@ package com.wotapi.extension.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
 @Entity
+@Table
 public class ClanWarsEvent {
 
     @Id
