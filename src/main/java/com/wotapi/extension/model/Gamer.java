@@ -1,5 +1,6 @@
 package com.wotapi.extension.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -8,13 +9,14 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Gamer {
 
     @Id
     @Column
     int accountId;
     @Column
-    String name;
+    String nickname;
     @Column
     Integer famePoints;
 
